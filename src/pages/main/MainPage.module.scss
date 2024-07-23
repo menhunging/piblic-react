@@ -1,0 +1,69 @@
+.mainPage {
+  position: relative;
+
+  &__hello {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 50px;
+
+    @include responsive1199 {
+      font-size: 36px;
+      line-height: 42px;
+    }
+
+    @include responsive1023 {
+      font-size: 32px;
+      line-height: 36px;
+    }
+
+    @include responsive767 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}
+
+.grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 261px 1fr;
+  align-items: flex-start;
+  gap: 30px;
+
+  @include responsive1199 {
+    margin-top: 30px;
+    grid-template-columns: 211px 1fr;
+  }
+
+  @include responsive1023 {
+    margin-top: 20px;
+    grid-template-columns: 201px 1fr;
+    gap: 20px;
+  }
+
+  @include responsive767 {
+    grid-template-columns: 1fr;
+  }
+
+  &__left {
+    border-right: solid 1px $colorBlack-a3;
+    padding-right: 30px;
+
+    @include responsive1023 {
+      padding-right: 20px;
+    }
+
+    @include responsive767 {
+      display: none;
+    }
+  }
+
+  &__right {
+    position: relative;
+
+    @include responsive767 {
+      border-top: solid 1px $colorBlack-a3;
+      padding-top: 20px;
+    }
+  }
+}

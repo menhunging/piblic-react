@@ -1,0 +1,346 @@
+.notConfirming {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: flex-start;
+
+  input {
+    @include boxShadowDefault;
+  }
+
+  &__title {
+    grid-column: 1/3;
+    grid-row: 1/1;
+
+    @include responsive1199 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    @include responsive1023 {
+      font-size: 18px;
+      line-height: 24px;
+      grid-column: 1/2;
+    }
+
+    @include responsive767 {
+      font-size: 16px;
+      line-height: 22px;
+      grid-column: initial;
+    }
+  }
+
+  &__item {
+    &_email {
+      grid-row: 2/3;
+
+      @include responsive1023 {
+        grid-row: initial;
+      }
+    }
+
+    &_phones {
+      grid-column: 1/2;
+      grid-row: 3/4;
+
+      .text {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @include before {
+          position: relative;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9 0C7.21997 0 5.47991 0.527841 3.99987 1.51677C2.51983 2.50571 1.36628 3.91131 0.685088 5.55585C0.00389957 7.20038 -0.17433 9.00998 0.172937 10.7558C0.520204 12.5016 1.37737 14.1053 2.63604 15.364C3.89472 16.6226 5.49836 17.4798 7.24419 17.8271C8.99002 18.1743 10.7996 17.9961 12.4442 17.3149C14.0887 16.6337 15.4943 15.4802 16.4832 14.0001C17.4722 12.5201 18 10.78 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948212 11.387 0 9 0ZM9 16.5C7.51664 16.5 6.0666 16.0601 4.83323 15.236C3.59986 14.4119 2.63856 13.2406 2.07091 11.8701C1.50325 10.4997 1.35473 8.99168 1.64411 7.53682C1.9335 6.08197 2.64781 4.74559 3.6967 3.6967C4.7456 2.64781 6.08197 1.9335 7.53683 1.64411C8.99168 1.35472 10.4997 1.50325 11.8701 2.0709C13.2406 2.63856 14.4119 3.59985 15.236 4.83322C16.0601 6.06659 16.5 7.51664 16.5 9C16.5 10.9891 15.7098 12.8968 14.3033 14.3033C12.8968 15.7098 10.9891 16.5 9 16.5Z' fill='%23FFA800'/%3e%3cpath d='M9.00011 7.27547C8.8012 7.27547 8.61043 7.35449 8.46978 7.49514C8.32913 7.63579 8.25011 7.82656 8.25011 8.02547V13.1255C8.25011 13.3244 8.32913 13.5151 8.46978 13.6558C8.61043 13.7965 8.8012 13.8755 9.00011 13.8755C9.19902 13.8755 9.38979 13.7965 9.53044 13.6558C9.6711 13.5151 9.75011 13.3244 9.75011 13.1255V8.02547C9.75011 7.82656 9.6711 7.63579 9.53044 7.49514C9.38979 7.35449 9.19902 7.27547 9.00011 7.27547ZM9.00011 4.20047C8.79708 4.2081 8.60467 4.29319 8.4624 4.43824C8.32013 4.5833 8.2388 4.77732 8.23511 4.98047V5.10047C8.23476 5.19832 8.25478 5.29518 8.2939 5.38488C8.33302 5.47457 8.39038 5.55514 8.46234 5.62145C8.5343 5.68777 8.61928 5.73838 8.71186 5.77006C8.80445 5.80174 8.90261 5.8138 9.00011 5.80547C9.19665 5.79805 9.38314 5.71664 9.52221 5.57757C9.66129 5.43849 9.74269 5.25201 9.75011 5.05547V4.87547C9.7507 4.78015 9.7311 4.68578 9.69259 4.59858C9.65407 4.51139 9.59753 4.43333 9.52668 4.36957C9.45582 4.3058 9.37227 4.25776 9.28151 4.22861C9.19075 4.19947 9.09485 4.18988 9.00011 4.20047Z' fill='%23FFA800'/%3e%3c/svg%3e ");
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 18px;
+          min-width: 18px;
+          height: 18px;
+          background-size: contain;
+
+          @include responsive767 {
+            width: 12px;
+            min-width: 12px;
+            height: 12px;
+          }
+        }
+      }
+
+      @include responsive1023 {
+        grid-row: initial;
+        grid-column: 1/2;
+      }
+    }
+
+    &_status {
+      grid-column: 2/2;
+      grid-row: 2/4;
+
+      .notConfirmingItem__very {
+        &::after {
+          display: none;
+        }
+      }
+
+      @include responsive1023 {
+        grid-row: initial;
+        grid-column: 1/2;
+      }
+    }
+  }
+
+  @include responsive1023 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.notConfirmingItem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+
+    @include responsive1199 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include responsive1023 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include responsive767 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__mail {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+
+    @include responsive1199 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include responsive767 {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__very {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include after {
+      position: relative;
+      width: 16px;
+      height: 16px;
+      background-size: 14px;
+      display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include responsive1023 {
+        background-size: 10px;
+      }
+    }
+
+    &_rejected {
+      color: $colorRed;
+
+      &::after {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z' fill='%23FF0000'/%3e%3c/svg%3e ");
+      }
+    }
+
+    &_additional {
+      color: $colorYellow;
+
+      &::after {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9 0C7.21997 0 5.47991 0.527841 3.99987 1.51677C2.51983 2.50571 1.36628 3.91131 0.685088 5.55585C0.00389957 7.20038 -0.17433 9.00998 0.172937 10.7558C0.520204 12.5016 1.37737 14.1053 2.63604 15.364C3.89472 16.6226 5.49836 17.4798 7.24419 17.8271C8.99002 18.1743 10.7996 17.9961 12.4442 17.3149C14.0887 16.6337 15.4943 15.4802 16.4832 14.0001C17.4722 12.5201 18 10.78 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948212 11.387 0 9 0ZM9 16.5C7.51664 16.5 6.0666 16.0601 4.83323 15.236C3.59986 14.4119 2.63856 13.2406 2.07091 11.8701C1.50325 10.4997 1.35473 8.99168 1.64411 7.53682C1.9335 6.08197 2.64781 4.74559 3.6967 3.6967C4.7456 2.64781 6.08197 1.9335 7.53683 1.64411C8.99168 1.35472 10.4997 1.50325 11.8701 2.0709C13.2406 2.63856 14.4119 3.59985 15.236 4.83322C16.0601 6.06659 16.5 7.51664 16.5 9C16.5 10.9891 15.7098 12.8968 14.3033 14.3033C12.8968 15.7098 10.9891 16.5 9 16.5Z' fill='%23FFA800'/%3e%3cpath d='M8.99999 7.27498C8.80108 7.27498 8.61031 7.354 8.46966 7.49465C8.32901 7.6353 8.24999 7.82607 8.24999 8.02498V13.125C8.24999 13.3239 8.32901 13.5147 8.46966 13.6553C8.61031 13.796 8.80108 13.875 8.99999 13.875C9.1989 13.875 9.38967 13.796 9.53032 13.6553C9.67097 13.5147 9.74999 13.3239 9.74999 13.125V8.02498C9.74999 7.82607 9.67097 7.6353 9.53032 7.49465C9.38967 7.354 9.1989 7.27498 8.99999 7.27498ZM8.99999 4.19998C8.79695 4.20762 8.60455 4.2927 8.46228 4.43775C8.32001 4.58281 8.23868 4.77684 8.23499 4.97998V5.09998C8.23463 5.19784 8.25466 5.29469 8.29378 5.38439C8.3329 5.47408 8.39026 5.55465 8.46222 5.62097C8.53418 5.68728 8.61915 5.73789 8.71174 5.76957C8.80432 5.80125 8.90249 5.81331 8.99999 5.80498C9.19653 5.79756 9.38301 5.71616 9.52209 5.57708C9.66117 5.43801 9.74257 5.25152 9.74999 5.05498V4.87498C9.75058 4.77966 9.73098 4.68529 9.69246 4.5981C9.65395 4.5109 9.59741 4.43285 9.52655 4.36908C9.4557 4.30531 9.37214 4.25727 9.28138 4.22813C9.19063 4.19898 9.09472 4.18939 8.99999 4.19998Z' fill='%23FFA800'/%3e%3c/svg%3e ");
+      }
+    }
+
+    @include responsive1199 {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    transition: transform 3s;
+
+    &_rotate {
+      transform: rotate(360deg);
+    }
+
+    @include responsive1023 {
+      background-size: 10px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &__status {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include after {
+      position: relative;
+      width: 16px;
+      height: 16px;
+      background-size: 14px;
+      display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include responsive1199 {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      @include responsive1023 {
+        background-size: 10px;
+      }
+    }
+
+    &.not {
+      color: $colorRed;
+
+      &::after {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z' fill='%23FF0000'/%3e%3c/svg%3e ");
+      }
+    }
+
+    &.confirmed {
+      color: $colorGreen;
+
+      &::after {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='13' viewBox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M17 1L6.00003 12L1.00003 7' stroke='%2300A068' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+      }
+    }
+
+    @include responsive1199 {
+      color: transparent !important;
+      width: 16px;
+      height: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    @include responsive1199 {
+      flex-wrap: wrap;
+    }
+
+    @include responsive767 {
+      gap: 16px;
+    }
+  }
+
+  &__btn {
+    flex: 1;
+    max-width: 205px;
+    white-space: nowrap;
+
+    @include responsive1199 {
+      flex-wrap: wrap;
+      max-width: initial;
+      flex: initial;
+    }
+  }
+
+  p + p {
+    margin-top: -10px;
+
+    @include responsive1023 {
+      margin-top: -8px;
+    }
+  }
+
+  @include responsive1023 {
+    gap: 16px;
+  }
+}
+
+.linkVerify {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+
+  @include after {
+    position: relative;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16L6.575 14.6L12.175 9Z' fill='black'/%3e%3c/svg%3e ");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    background-size: 15px;
+
+    @include responsive1023 {
+      width: 16px;
+      height: 16px;
+      background-size: 13px;
+    }
+  }
+}
+
+.code {
+  width: 100%;
+
+  .label {
+    margin-bottom: 20px;
+  }
+
+  .textInvis {
+    top: calc(50% + 18px);
+  }
+}
+
+.codeInput {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include responsive1023 {
+    gap: 16px;
+  }
+}

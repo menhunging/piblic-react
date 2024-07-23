@@ -1,0 +1,78 @@
+.header {
+  position: relative;
+  z-index: 5;
+  @include boxShadowDefault;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 30px;
+
+    @include responsive1199 {
+      max-width: 1024px;
+      padding: 12px 60px;
+    }
+
+    @include responsive1023 {
+      max-width: 768px;
+      padding: 16px 20px;
+    }
+
+    @include responsive767 {
+      padding: 12px 16px;
+    }
+  }
+
+  &__controls {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include responsive767 {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    margin-left: auto;
+    gap: 22px;
+
+    @include responsive767 {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.logo {
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.3s;
+
+  &__icon {
+    display: block;
+    width: 148px;
+    height: 50px;
+
+    @include responsive1199 {
+      width: 119px;
+      height: 40px;
+    }
+
+    @include responsive1023 {
+      width: 90px;
+      height: 30px;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

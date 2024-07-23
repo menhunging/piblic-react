@@ -1,0 +1,17 @@
+.blockWhite {
+  @include boxShadowDefault;
+  background-color: $colorWhite;
+  padding: 30px;
+  border-radius: 20px;
+
+  @include responsive1199 {
+  }
+
+  @include responsive1023 {
+    padding: 20px;
+  }
+
+  @include responsive767 {
+    padding: 16px;
+  }
+}

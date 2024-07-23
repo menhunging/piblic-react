@@ -1,0 +1,742 @@
+.checkout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &__caption {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    width: 100%;
+
+    @include responsive1199 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include responsive1023 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include responsive767 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__item {
+    width: calc(100% - 390px);
+    margin-bottom: 30px;
+
+    @include responsive1199 {
+      width: 100%;
+    }
+
+    @include responsive1023 {
+      margin-bottom: 20px;
+    }
+
+    &_pay {
+      width: 360px;
+      margin-top: 30px;
+
+      @include responsive1199 {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__btn {
+    margin: 20px auto 0;
+
+    @include responsive767 {
+      width: 100%;
+      margin-top: 16px;
+    }
+  }
+}
+
+.billingDetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 30px;
+  margin-top: 20px;
+
+  @include responsive1023 {
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .inputItem {
+    width: calc(50% - 15px);
+
+    &:last-child {
+      width: 100%;
+    }
+
+    @include responsive1023 {
+      width: calc(50% - 8px);
+    }
+
+    @include responsive767 {
+      width: 100%;
+
+      textarea {
+        height: 88px;
+      }
+    }
+  }
+}
+
+.pay {
+  margin-top: 20px;
+
+  @include responsive1023 {
+    margin-top: 16px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    display: block;
+
+    @include responsive1199 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include responsive767 {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  ul {
+    margin-top: 20px;
+
+    @include responsive1023 {
+      margin-top: 16px;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+
+      @include before {
+        position: relative;
+        flex: 1;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='211' height='2' viewBox='0 0 211 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 1H211' stroke='black' stroke-opacity='0.2' stroke-dasharray='4 4'/%3e%3c/svg%3e ");
+        background-position: center;
+        height: 1px;
+        order: 2;
+        top: -2px;
+      }
+    }
+  }
+
+  .tit {
+    order: 1;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  .data {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    order: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0_222_5903)'%3e%3cpath d='M4.086 5C4.562 4.595 6.215 4 8 4C9.785 4 11.438 4.594 11.914 5H14C14 2.756 9.879 2 8 2C6.121 2 2 2.756 2 5V17C2 19.245 6.121 20 8 20C8.287 20 8.631 19.98 9 19.942V17.934C8.66828 17.976 8.33435 17.998 8 18C6.084 18 4.318 17.315 4 16.914V16.221C5.32 16.777 6.985 17 8 17C8.288 17 8.631 16.98 9 16.942V14.934C8.66828 14.976 8.33435 14.998 8 15C6.063 15 4.291 14.302 4 13.902V13.22C5.32 13.777 6.985 14 8 14C8.288 14 8.631 13.98 9 13.942V11.934C8.66828 11.976 8.33435 11.998 8 12C6.063 12 4.291 11.302 4 10.902V10.22C5.32 10.777 6.985 11 8 11C8.288 11 8.631 10.98 9 10.942V8.935C8.66822 8.97612 8.33431 8.99783 8 9C6.063 9 4.291 8.303 4 7.903V7.221C5.32 7.777 6.985 8 8 8C8.288 8 8.631 7.98 9 7.942V5.936C8.6682 5.97678 8.33429 5.99815 8 6C6.216 6 4.562 5.407 4.086 5Z' fill='%2300A068'/%3e%3cpath d='M16 7C14.121 7 10 7.756 10 10V19C10 21.245 14.121 22 16 22C17.879 22 22 21.245 22 19V10C22 7.756 17.879 7 16 7ZM20 12.903C19.709 13.303 17.937 14 16 14C14.063 14 12.291 13.302 12 12.902V12.22C13.32 12.777 14.985 13 16 13C17.015 13 18.68 12.777 20 12.221V12.903ZM20 15.903C19.709 16.303 17.937 17 16 17C14.063 17 12.291 16.302 12 15.902V15.22C13.32 15.777 14.985 16 16 16C17.015 16 18.68 15.777 20 15.221V15.903ZM16 9C17.785 9 19.438 9.594 19.914 10C19.438 10.406 17.784 11 16 11C14.216 11 12.562 10.406 12.086 10C12.562 9.595 14.215 9 16 9ZM16 20C14.084 20 12.318 19.315 12 18.914V18.221C13.32 18.777 14.985 19 16 19C17.015 19 18.68 18.777 20 18.221V18.914C19.682 19.315 17.916 20 16 20Z' fill='%2300A068'/%3e%3c/g%3e%3cdefs%3e%3cclipPath id='clip0_222_5903'%3e%3crect width='24' height='24' fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e ");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include responsive767 {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.paymentMethod {
+  margin-top: 20px;
+
+  &__check {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.byCard {
+  margin-top: 20px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px 30px;
+
+    @include responsive1023 {
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @include responsive767 {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    height: 64px;
+    width: calc(50% - 15px);
+
+    @include responsive1439 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include responsive1023 {
+      font-size: 14px;
+      line-height: 20px;
+      height: 52px;
+      width: calc(50% - 8px);
+      background-size: 16px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      height: 48px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    input {
+      display: none;
+
+      &:checked {
+        & + label {
+          background-color: $colorGreen;
+          color: $colorWhite;
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    label {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 54px;
+      border-radius: 20px;
+      border: solid 1px $colorGreen;
+
+      @include responsive1439 {
+        padding-right: 50px;
+      }
+
+      @include responsive1023 {
+        padding-left: 50px;
+      }
+
+      @include before {
+        width: 24px;
+        height: 24px;
+        border: solid 1px $colorBlack-a3;
+        border-radius: 20px;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $colorWhite;
+
+        @include responsive1023 {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      @include after {
+        width: 10px;
+        height: 10px;
+        background-color: $colorGreen;
+        border-radius: 20px;
+        left: 27px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+
+        @include responsive1023 {
+          width: 8px;
+          height: 8px;
+          left: 24px;
+        }
+      }
+    }
+  }
+}
+
+.addNewCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px 30px;
+  margin-top: 20px;
+
+  @include responsive1023 {
+    gap: 16px;
+  }
+
+  .inputItem {
+    width: calc(50% - 15px);
+    margin: 0;
+
+    @include responsive1023 {
+      width: calc(50% - 8px);
+    }
+
+    @include responsive767 {
+      width: 100%;
+    }
+
+    &:nth-child(1) {
+      width: 100%;
+    }
+    &:nth-child(2) {
+    }
+    &:nth-child(3) {
+    }
+  }
+
+  .checkBlock {
+    width: 100%;
+  }
+}
+
+.directTransfer {
+  margin-top: 20px;
+
+  .addNewCard {
+    .inputItem {
+      @include responsive1023 {
+        width: 100%;
+      }
+
+      &:nth-child(1) {
+        width: calc(50% - 15px);
+
+        @include responsive1023 {
+          width: calc(50% - 8px);
+        }
+
+        @include responsive767 {
+          width: 100%;
+        }
+      }
+
+      &:nth-child(2) {
+        width: calc(50% - 15px);
+
+        @include responsive1023 {
+          width: calc(50% - 8px);
+        }
+
+        @include responsive767 {
+          width: 100%;
+        }
+      }
+
+      &:nth-child(3) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__row {
+    & + .directTransfer__row {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: solid 1px $colorBlack-a3;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+
+    @include responsive1199 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &__tit {
+    order: 1;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+
+    @include responsive1199 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include responsive767 {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__data {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    order: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include responsive1199 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include responsive1023 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive767 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  ul {
+    margin-top: 20px;
+
+    @include responsive1023 {
+      margin-top: 16px;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+
+      & + li {
+        margin-top: 20px;
+      }
+
+      @include before {
+        position: relative;
+        flex: 1;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='211' height='2' viewBox='0 0 211 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 1H211' stroke='black' stroke-opacity='0.2' stroke-dasharray='4 4'/%3e%3c/svg%3e ");
+        background-position: center;
+        height: 1px;
+        order: 2;
+        top: -2px;
+      }
+    }
+  }
+}
+
+.attachments {
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @include responsive1199 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  @include responsive767 {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+}
+
+.offerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  @include responsive767 {
+    gap: 10px;
+  }
+
+  &__caption {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+
+    @include responsive1199 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include responsive1023 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include responsive767 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__date {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: $colorBlack-a5;
+
+    @include responsive1199 {
+      font-size: 10px;
+      line-height: 14px;
+    }
+
+    @include responsive767 {
+      font-size: 8px;
+      line-height: 12px;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+
+    @include responsive1199 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include responsive1023 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive767 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+
+    @include responsive1199 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include responsive767 {
+      font-size: 10px;
+      line-height: 15px;
+    }
+  }
+
+  &__price {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $colorBlack-a5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include responsive1199 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include responsive767 {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__value {
+    color: $colorBlack;
+    font-weight: 600;
+  }
+}
+
+.offerContacts {
+  border-top: solid 1px $colorBlack-a5;
+  width: 100%;
+
+  &__line {
+    padding-top: 16px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    display: block;
+    color: $colorBlack-a5;
+
+    @include responsive1199 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include responsive767 {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  ul {
+    margin-top: 16px;
+
+    @include responsive1023 {
+      margin-top: 16px;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+
+      @include before {
+        position: relative;
+        flex: 1;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='211' height='2' viewBox='0 0 211 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 1H211' stroke='black' stroke-opacity='0.2' stroke-dasharray='4 4'/%3e%3c/svg%3e ");
+        background-position: center;
+        height: 1px;
+        order: 2;
+        top: -2px;
+      }
+
+      & + li {
+        margin-top: 16px;
+
+        @include responsive767 {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .tit {
+    order: 1;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: $colorBlack-a5;
+
+    @include responsive1199 {
+      font-size: 10px;
+      line-height: 14px;
+    }
+
+    @include responsive767 {
+      font-size: 8px;
+      line-height: 12px;
+    }
+  }
+
+  .data {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    order: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $colorBlack;
+
+    @include responsive1199 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include responsive767 {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}

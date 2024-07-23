@@ -1,0 +1,74 @@
+$fontMain: "Gilroy";
+
+$colorWhite: rgba(255, 255, 255, 1);
+$colorWhite-a7: rgba(255, 255, 255, 0.7);
+$colorWhite-a5: rgba(255, 255, 255, 0.5);
+$colorWhite-a3: rgba(255, 255, 255, 0.3);
+
+$colorBlack: rgba(0, 0, 0, 1);
+$colorBlack-a7: rgba(0, 0, 0, 0.7);
+$colorBlack-a5: rgba(0, 0, 0, 0.5);
+$colorBlack-a3: rgba(0, 0, 0, 0.3);
+$colorBlack-a2: rgba(0, 0, 0, 0.2);
+
+$colorBlue: rgba(0, 41, 65, 1);
+$colorBlue-a8: rgba(0, 41, 65, 0.8);
+
+$colorGreen: rgba(0, 160, 104, 1);
+$colorRed: rgba(255, 0, 0, 1);
+$colorYellow: rgba(255, 168, 0, 1);
+
+$responsive1439: "1439px";
+$responsive1999: "1199px";
+$responsive1023: "1023px";
+$responsive767: "767px";
+$responsive639: "639px";
+$responsive479: "479px";
+
+@mixin boxShadowDefault {
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.16);
+}
+
+// @media responsive
+
+@mixin responsiveMinWidth768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin responsive1439 {
+  @media (max-width: $responsive1439) {
+    @content;
+  }
+}
+
+@mixin responsive1199 {
+  @media (max-width: $responsive1999) {
+    @content;
+  }
+}
+
+@mixin responsive1023 {
+  @media (max-width: $responsive1023) {
+    @content;
+  }
+}
+
+@mixin responsive767 {
+  @media (max-width: $responsive767) {
+    @content;
+  }
+}
+
+@mixin responsive639 {
+  @media (max-width: $responsive639) {
+    @content;
+  }
+}
+
+@mixin responsive479 {
+  @media (max-width: $responsive479) {
+    @content;
+  }
+}

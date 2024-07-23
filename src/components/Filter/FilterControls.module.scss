@@ -1,0 +1,94 @@
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+
+  @include responsive639 {
+    gap: 20px;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+
+    @include responsive1199 {
+      width: calc(60% + 24px);
+    }
+
+    @include responsive1023 {
+      width: calc(60% + 13px);
+    }
+
+    @include responsive639 {
+      width: 100%;
+    }
+  }
+
+  &__right {
+    @include responsive639 {
+      width: 100%;
+    }
+
+    .btn {
+      @include responsive639 {
+        width: 100%;
+      }
+    }
+  }
+
+  &__btnfilter {
+    cursor: pointer;
+    background-position: left center !important;
+    background-size: 18px !important;
+    padding-left: 34px;
+    transition: opacity 0.3s;
+    position: relative;
+
+    @include before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: solid 1px $colorWhite;
+      background-color: $colorRed;
+      top: 0;
+      left: 14px;
+    }
+
+    @include responsive479 {
+      color: transparent;
+      overflow: hidden;
+      white-space: nowrap;
+      background-size: 12px !important;
+      width: 16px;
+      height: 16px;
+      padding: 0;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    right: 20px;
+    background-size: contain;
+  }
+
+  .inputItem {
+    margin: 0;
+  }
+
+  input {
+    @include boxShadowDefault;
+    padding-right: 50px;
+  }
+}

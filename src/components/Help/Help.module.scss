@@ -1,0 +1,34 @@
+.helpEmpty {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+
+  &__btn {
+    @include responsive767 {
+      width: 100%;
+    }
+  }
+}
+
+.helpList {
+  &__head {
+  }
+
+  &__newMessage {
+  }
+}
+
+.helpItem {
+  &__date {
+  }
+
+  &__cat {
+  }
+
+  &__status {
+  }
+
+  &__linkView {
+  }
+}

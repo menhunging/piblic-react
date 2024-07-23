@@ -1,0 +1,282 @@
+.notifications {
+  position: relative;
+
+  &__page {
+    .notifications__list {
+      @include boxShadowDefault;
+      border-radius: 20px;
+      padding: 0 30px;
+      overflow: hidden;
+    }
+
+    .notifications__item {
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      p {
+        display: block;
+      }
+    }
+
+    @include responsive1023 {
+      .notifications__list {
+        padding: 0 20px;
+      }
+    }
+
+    @include responsive767 {
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    width: 13px;
+    height: 14px;
+    display: block;
+    background-size: cover;
+
+    @include before {
+      opacity: 0;
+      right: -1px;
+      top: -1px;
+      width: 8px;
+      height: 8px;
+      border: solid 1px $colorWhite;
+      background-color: $colorRed;
+      border-radius: 50%;
+    }
+  }
+
+  &__dropBlock {
+    width: 460px;
+    position: absolute;
+    top: calc(100% + 55px);
+    right: 0;
+    @include boxShadowDefault;
+    border-radius: 20px 0px 20px 20px;
+    transition: transform 0.3s, opacity 0.3s;
+
+    @include before {
+      width: 33px;
+      height: 62px;
+      right: 0;
+      bottom: calc(100% - 0px);
+      background-color: $colorWhite;
+      mask-image: url("../../assets/img/mask.png");
+      pointer-events: none;
+
+      @include responsive767 {
+        mask-image: none;
+        background-color: $colorWhite;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        z-index: -1;
+      }
+    }
+
+    @include after {
+      box-shadow: 0px 0px 36px 10px rgba(0, 0, 0, 0.16);
+      width: 0;
+      height: 2px;
+      right: 2px;
+      top: -31px;
+      z-index: -2;
+    }
+
+    @include responsive1023 {
+      width: 328px;
+      top: calc(100% + 45px);
+    }
+
+    @include responsive767 {
+      width: 100%;
+      right: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      padding: 16px 16px 24px;
+      background-color: $colorWhite;
+    }
+  }
+
+  &__dropBlockInner {
+    position: relative;
+    border-radius: 20px 0px 20px 20px;
+    background-color: $colorWhite;
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+    overflow: hidden;
+    transition: all 0.3s;
+
+    @include responsive1023 {
+      padding-bottom: 20px;
+    }
+
+    @include responsive767 {
+      padding: 0;
+    }
+  }
+
+  &__list {
+  }
+
+  &__item {
+    position: relative;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px 0;
+    padding-right: 20px;
+    border-top: solid 1px $colorBlack-a3;
+    z-index: 2;
+    width: 100%;
+
+    p {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: solid 1px $colorBlack-a3;
+    }
+
+    @include before {
+      width: 100%;
+      height: 100%;
+      left: -30px;
+      top: 0;
+      width: calc(100% + 60px);
+      background-color: $colorGreen;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    @include responsiveMinWidth768 {
+      &:hover {
+        color: $colorWhite;
+        border-color: transparent;
+
+        & + .notifications__item {
+          border-top-color: transparent;
+        }
+
+        &::before {
+          opacity: 1;
+        }
+
+        .notifications__date {
+          color: $colorWhite-a7;
+        }
+
+        .notifications__delete {
+          opacity: 1;
+          pointer-events: initial;
+        }
+      }
+    }
+
+    @include responsive1199 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+      padding: 16px 0;
+      padding-right: 16px;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 20px;
+    color: $colorBlack-a7;
+    transition: color 0.3s;
+
+    @include responsive1199 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include responsive1023 {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__delete {
+    position: absolute;
+    right: 0;
+    top: 25px;
+    width: 14px;
+    height: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+
+    @include responsive1199 {
+      top: 20px;
+    }
+
+    @include responsive1023 {
+      top: 16px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &__linkAll {
+    display: inline-block;
+    margin: 20px auto 0;
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    display: none;
+    width: 9px;
+    height: 9px;
+    margin-left: auto;
+
+    @include responsive767 {
+      display: flex;
+    }
+  }
+
+  &_opened {
+  }
+
+  &_new {
+    .notifications__icon {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}

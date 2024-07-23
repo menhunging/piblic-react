@@ -1,0 +1,239 @@
+.filter {
+  width: 100%;
+  margin-top: 30px;
+  max-height: 100vh;
+
+  @include responsive1023 {
+    margin-top: 20px;
+  }
+
+  @include responsive767 {
+    background-color: $colorWhite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    margin: 0;
+    padding: 16px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 0.3s;
+    overflow: auto;
+  }
+
+  &__head {
+    display: none;
+
+    @include responsive767 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background-size: 10px !important;
+  }
+
+  &__row {
+    display: flex;
+    position: relative;
+
+    @include before {
+      top: calc(50% + 20px);
+      left: 0;
+      width: 100%;
+      background-color: $colorBlack-a3;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+
+      @include responsive1199 {
+        opacity: 1;
+      }
+
+      @include responsive767 {
+        display: none;
+      }
+    }
+
+    @include responsive1439 {
+      flex-wrap: wrap;
+      gap: 40px 0;
+    }
+
+    @include responsive767 {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__col {
+    border-right: solid 1px $colorBlack-a3;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &_category {
+      .filter__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 20px;
+      }
+    }
+
+    &_date {
+      .filter__list {
+        min-width: 180px;
+      }
+    }
+
+    @include responsive1439 {
+      position: relative;
+
+      &:nth-child(2) {
+        border-right: 0;
+        width: 60%;
+      }
+
+      &:nth-child(3) {
+        padding-left: 0;
+      }
+    }
+
+    @include responsive1199 {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    @include responsive1023 {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      padding: 0;
+      border: 0;
+      margin-top: 16px;
+      padding-top: 16px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:nth-child(2) {
+        width: 100%;
+      }
+
+      & + .filter__col {
+        border-top: solid 1px $colorBlack-a3;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 22px;
+
+    @include responsive1199 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 16px;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+
+    @include responsive1023 {
+      margin-top: 20px;
+    }
+
+    @include responsive767 {
+      flex-direction: column;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  &__clear {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    line-height: 22px;
+    text-decoration: underline;
+    transition: text-decoration 0.3s;
+
+    @include after {
+      position: relative;
+      width: 16px;
+      height: 16px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.009 15.0085L10.9081 15.5263C10.5104 15.6971 10.0681 15.9138 9.62735 15.9358C9.54226 15.9401 8.92476 15.9514 8.87819 15.9279C8.81485 15.8958 8.78369 15.7801 8.73113 15.7321L8.21779 15.8551C8.02576 15.9049 7.92985 15.9374 7.73151 15.9378L7.42885 15.9382C7.09444 15.9384 6.07666 15.9779 5.83257 15.7809C5.62098 15.61 5.75926 15.4397 5.92916 15.3342L6.13438 15.2026C7.01885 14.6022 7.26773 14.044 7.26876 13.0246C7.2691 12.7011 7.23744 11.6518 6.98476 11.4289C6.6606 11.143 6.39016 10.7271 6.42391 10.2811L6.44232 10.1325C6.45341 10.0677 6.45344 10.0816 6.40844 10.0342L6.28754 9.90025C6.07382 9.64235 5.91166 9.32985 5.89444 8.99119C5.87423 8.59344 6.01457 8.12588 6.29544 7.83269C6.30873 7.81881 6.36982 7.77635 6.35098 7.75747C6.11407 7.52006 5.90504 7.24641 5.6856 6.99235L1.2466 1.80438C1.06154 1.59455 0.858166 1.39043 0.690656 1.16679C0.368338 0.736449 0.536747 0.122236 1.08222 0.0657017L1.12501 0.0628498C1.66964 0.0546345 1.68283 0.189802 2.03822 0.608215L7.36276 6.82094C7.4556 6.93056 7.40951 6.9386 7.53073 6.89075C8.21479 6.62075 8.97666 6.88769 9.41616 7.46425C9.42816 7.47994 9.43516 7.5075 9.45582 7.50125C9.85266 7.38094 10.3101 7.55266 10.5249 7.91156C10.5444 7.94422 10.5564 7.92056 10.5914 7.90719C11.0824 7.71978 11.8078 8.21513 12.2064 8.47675C13.5175 9.33713 14.6128 10.4565 15.3559 11.8435C15.5663 12.2363 15.5269 12.253 15.2836 12.5969C14.7113 13.406 13.5634 14.1445 12.7232 14.6181L12.009 15.0085ZM1.15801 0.54078C1.07379 0.575552 1.01408 0.618021 0.972094 0.701949C1.04154 0.883215 1.20086 1.03755 1.32741 1.18273L6.72857 7.45978L6.79716 7.40028L7.04394 7.20553L1.46495 0.682059C1.37457 0.586202 1.29233 0.522674 1.15801 0.54078ZM7.96323 7.26072C7.63951 7.30247 7.39635 7.51903 7.15091 7.717C6.75232 8.0385 6.29148 8.42125 6.37157 8.99738L6.38107 9.04706C6.43694 9.3075 6.57879 9.48119 6.73823 9.6861L7.09766 9.35338L8.69998 7.98369C8.80157 7.8946 8.89866 7.79825 9.01857 7.73363L9.00941 7.72625C8.93426 7.6651 8.87532 7.58694 8.8026 7.52285C8.56104 7.30994 8.27901 7.23763 7.96323 7.26072ZM9.66816 7.92335C9.29741 8.00194 8.84863 8.49781 8.56248 8.74138L7.28648 9.81781C6.83954 10.1933 6.75038 10.4113 7.13088 10.8903C7.14535 10.9086 7.16463 10.94 7.18282 10.9538L7.31663 10.8453L9.53679 8.90722C9.77254 8.69719 9.99248 8.49775 10.1779 8.24038C10.0426 8.06275 9.91038 7.8936 9.66816 7.92335ZM10.8382 8.31953C10.4769 8.71685 10.0689 9.07763 9.66732 9.43378L8.17141 10.7492C7.95426 10.942 7.71241 11.1155 7.50926 11.3227C7.63966 11.7316 7.71788 12.1505 7.74341 12.5793L7.74932 13.0776C7.74532 14.171 7.49804 14.7238 6.66207 15.4116C6.89544 15.3806 7.12641 15.3084 7.35079 15.2382C7.74148 15.1158 7.94341 14.9527 8.0616 14.5202C8.11126 14.3384 8.07551 13.9804 8.32423 13.939C8.62788 13.8885 9.1316 14.8205 9.16294 15.1449L9.17129 15.4727C9.4901 15.4678 9.79454 15.4413 10.0963 15.3271C10.1264 15.2186 10.0615 14.8813 10.0408 14.7697C9.90223 14.0222 9.53235 13.3666 9.09157 12.7588C9.03644 12.6828 8.94782 12.6117 8.90766 12.5275C8.82176 12.3478 9.00232 12.1201 9.19969 12.1901C9.31538 12.2311 9.39966 12.371 9.47151 12.4659C10.1157 13.3174 10.4676 14.0968 10.5716 15.1489C10.9701 15.0083 11.6549 14.6728 12.0029 14.4535C11.9915 14.2442 11.563 13.4803 11.4441 13.2932C11.3117 13.0965 11.1719 12.9015 11.0212 12.7183L10.3866 12.0299C10.2736 11.9178 10.1083 11.7944 10.1475 11.6138C10.1686 11.5166 10.3076 11.4313 10.4039 11.4523C10.4874 11.4705 10.5538 11.53 10.6152 11.5859L10.8146 11.7809C11.4502 12.4198 11.98 13.1154 12.34 13.9481L12.4516 14.2383L13.4144 13.6334C13.3651 13.4138 12.9697 12.8288 12.8396 12.6489C12.5404 12.2355 12.2039 11.8506 11.8342 11.4987L11.4422 11.1372C11.3528 11.0581 11.2337 10.9794 11.1652 10.8828C11.0108 10.665 11.2664 10.3978 11.4893 10.5493C11.6019 10.6258 11.7058 10.7303 11.8083 10.8203C12.4426 11.3775 13.5116 12.5311 13.8182 13.3544C14.2516 13.0026 14.68 12.6422 14.9909 12.1718C14.3164 10.8604 13.2969 9.79569 12.0845 8.96781C11.739 8.73194 11.3505 8.48225 10.9503 8.355L10.8382 8.31953ZM8.49357 14.7395C8.43679 14.9698 8.27919 15.1686 8.13682 15.3524L8.29285 15.3109C8.87598 15.1632 8.70354 15.2358 8.49357 14.7395Z' fill='black'/%3e%3c/svg%3e ");
+    }
+
+    &:hover {
+      text-decoration-color: transparent;
+    }
+
+    @include responsive1199 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  .checkBlock {
+    position: relative;
+
+    label {
+      white-space: nowrap;
+    }
+
+    &_full {
+      grid-column: 1/3;
+    }
+
+    & + .checkBlock {
+    }
+  }
+}

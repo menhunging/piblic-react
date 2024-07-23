@@ -1,0 +1,284 @@
+.mobileMenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: $colorWhite;
+  z-index: 5;
+  padding: 16px;
+  transition: transform 0.3s, opacity 0.3s;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: $colorBlack;
+
+  @include before {
+    background-color: $colorWhite;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: -1;
+  }
+
+  @include responsive767 {
+    display: block;
+  }
+}
+
+.close {
+  cursor: pointer;
+  width: 9px;
+  height: 9px;
+  display: block;
+  margin-left: auto;
+}
+
+.userInfo {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px 10px;
+  align-items: center;
+  margin-top: 20px;
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='13' viewBox='0 0 10 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.5 7C9.32843 7 10 7.67157 10 8.5V9C10 10.9714 8.14049 13 5 13C1.85951 13 0 10.9714 0 9V8.5C0 7.67157 0.671573 7 1.5 7H8.5ZM8.5 8H1.5C1.22386 8 1 8.22386 1 8.5V9C1 10.4376 2.43216 12 5 12C7.56784 12 9 10.4376 9 9V8.5C9 8.22386 8.77614 8 8.5 8ZM5 0.5C6.51878 0.5 7.75 1.73122 7.75 3.25C7.75 4.76878 6.51878 6 5 6C3.48122 6 2.25 4.76878 2.25 3.25C2.25 1.73122 3.48122 0.5 5 0.5ZM5 1.5C4.0335 1.5 3.25 2.2835 3.25 3.25C3.25 4.2165 4.0335 5 5 5C5.9665 5 6.75 4.2165 6.75 3.25C6.75 2.2835 5.9665 1.5 5 1.5Z' fill='white'/%3e%3c/svg%3e ");
+    background-color: $colorGreen;
+    background-size: 12px;
+    margin: 0 auto;
+    grid-row: 1/3;
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  &__status {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+}
+
+.menu {
+  margin-top: 20px;
+
+  li {
+    & + li {
+      border-top: 1px solid $colorBlue-a8;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $colorBlue-a8;
+    }
+  }
+
+  a {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 16px 0;
+    text-decoration-color: transparent;
+    display: block;
+    position: relative;
+
+    @include before {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M3.39992 4L0.333252 0.933333L1.26659 0L5.26659 4L1.26659 8L0.333252 7.06667L3.39992 4Z' fill='%2300A068'/%3e%3c/svg%3e ");
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 5px;
+      height: 8px;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+
+    &.disabled {
+      color: $colorBlack-a2;
+      pointer-events: none;
+    }
+
+    &.active {
+      color: $colorGreen;
+      text-decoration-color: $colorGreen;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  & + * {
+    margin-top: 20px;
+  }
+
+  @include responsive767 {
+    margin-top: 4px;
+  }
+}
+
+.lang {
+  .langTitle {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__text {
+    }
+  }
+
+  .langChange {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    border: solid 1px $colorGreen;
+
+    li {
+      width: 50%;
+    }
+
+    a {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $colorWhite;
+      text-decoration: none;
+      padding: 10px;
+      gap: 12px;
+      color: $colorBlack;
+
+      @include after {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.3334 1L5.00008 8.33333L1.66675 5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 11px;
+        height: 8px;
+        position: relative;
+        display: none;
+      }
+
+      &.active {
+        background-color: $colorGreen;
+        color: $colorWhite;
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  border-top: solid 1px $colorBlue-a8;
+  margin-top: 20px;
+  padding-top: 20px;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+  }
+
+  &__link {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.burger {
+  cursor: pointer;
+  display: none;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 2px;
+
+  &__line {
+    pointer-events: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    transition: all 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:nth-child(1) {
+      width: 50%;
+    }
+    &:nth-child(2) {
+      width: 100%;
+    }
+    &:nth-child(3) {
+      width: 75%;
+    }
+  }
+
+  &.opened {
+    .burger-line {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 5px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -3px);
+      }
+    }
+  }
+
+  &_dark {
+    .burger__line {
+      background-color: $colorBlack;
+    }
+  }
+
+  &_white {
+    .burger__line {
+      background-color: $colorWhite;
+    }
+  }
+
+  @include responsive767 {
+    display: flex;
+  }
+}

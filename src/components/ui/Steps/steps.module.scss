@@ -1,0 +1,74 @@
+.steps {
+  position: relative;
+}
+
+.stepsNubmers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 61px;
+
+  &__item {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    background-color: #fff;
+    border: solid 1px $colorGreen;
+    color: $colorBlack;
+    transition: all 0.3s;
+
+    &:last-child {
+      &::before {
+        display: none;
+      }
+    }
+
+    @include before {
+      width: 50px;
+      height: 1px;
+      background-color: rgba(217, 217, 217, 1);
+      left: calc(100% + 5px);
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include responsive767 {
+        width: calc(50% - 5px);
+      }
+    }
+
+    @include responsive1199 {
+      width: 52px;
+      height: 52px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include responsive1023 {
+      width: 44px;
+      height: 44px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+
+  @include responsive767 {
+    gap: 25px;
+  }
+}
+
+.active {
+  color: #fff;
+  background-color: $colorGreen;
+}
+
+.complete {
+  color: #fff;
+  background-color: $colorGreen;
+}

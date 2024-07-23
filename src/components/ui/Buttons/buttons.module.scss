@@ -1,0 +1,75 @@
+.btn {
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: all 0.3s;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  padding: 8px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+
+  @include responsive1199 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @include responsive1023 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  @include responsive767 {
+  }
+
+  &:hover {
+    .icon {
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.btn-green {
+  background-color: $colorGreen;
+  color: $colorWhite;
+  border: solid 1px $colorGreen;
+
+  &:hover {
+    background-color: rgb(7, 110, 74);
+    border-color: rgb(7, 110, 74);
+  }
+}
+
+.btn-white {
+  background-color: transparent;
+  border: solid 1px $colorWhite;
+  color: $colorWhite;
+
+  &:hover {
+    background-color: $colorWhite;
+    color: $colorBlue;
+  }
+}
+
+.btn-dark {
+  background-color: transparent;
+  border: solid 1px $colorBlack;
+  color: $colorBlack;
+
+  &:hover {
+    background-color: $colorBlack;
+    color: $colorWhite;
+  }
+}

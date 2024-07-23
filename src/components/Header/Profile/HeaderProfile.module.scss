@@ -1,0 +1,151 @@
+.profile {
+  position: relative;
+
+  &__icon {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='13' viewBox='0 0 10 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.5 7C9.32843 7 10 7.67157 10 8.5V9C10 10.9714 8.14049 13 5 13C1.85951 13 0 10.9714 0 9V8.5C0 7.67157 0.671573 7 1.5 7H8.5ZM8.5 8H1.5C1.22386 8 1 8.22386 1 8.5V9C1 10.4376 2.43216 12 5 12C7.56784 12 9 10.4376 9 9V8.5C9 8.22386 8.77614 8 8.5 8ZM5 0.5C6.51878 0.5 7.75 1.73122 7.75 3.25C7.75 4.76878 6.51878 6 5 6C3.48122 6 2.25 4.76878 2.25 3.25C2.25 1.73122 3.48122 0.5 5 0.5ZM5 1.5C4.0335 1.5 3.25 2.2835 3.25 3.25C3.25 4.2165 4.0335 5 5 5C5.9665 5 6.75 4.2165 6.75 3.25C6.75 2.2835 5.9665 1.5 5 1.5Z' fill='white'/%3e%3c/svg%3e ");
+    background-color: $colorGreen;
+  }
+
+  &__iconBig {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='13' viewBox='0 0 10 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.5 7C9.32843 7 10 7.67157 10 8.5V9C10 10.9714 8.14049 13 5 13C1.85951 13 0 10.9714 0 9V8.5C0 7.67157 0.671573 7 1.5 7H8.5ZM8.5 8H1.5C1.22386 8 1 8.22386 1 8.5V9C1 10.4376 2.43216 12 5 12C7.56784 12 9 10.4376 9 9V8.5C9 8.22386 8.77614 8 8.5 8ZM5 0.5C6.51878 0.5 7.75 1.73122 7.75 3.25C7.75 4.76878 6.51878 6 5 6C3.48122 6 2.25 4.76878 2.25 3.25C2.25 1.73122 3.48122 0.5 5 0.5ZM5 1.5C4.0335 1.5 3.25 2.2835 3.25 3.25C3.25 4.2165 4.0335 5 5 5C5.9665 5 6.75 4.2165 6.75 3.25C6.75 2.2835 5.9665 1.5 5 1.5Z' fill='white'/%3e%3c/svg%3e ");
+    background-color: $colorGreen;
+    background-size: 15px;
+    margin: 0 auto;
+
+    @include responsive1023 {
+      background-size: 12px;
+    }
+  }
+
+  &__drop {
+    background-color: $colorWhite;
+    @include boxShadowDefault;
+    position: absolute;
+    top: calc(100% + 40px);
+    right: 0;
+    width: 260px;
+    padding: 30px;
+    border-radius: 20px 0px 20px 20px;
+
+    @include before {
+      width: 33px;
+      height: 62px;
+      right: 0;
+      bottom: calc(100% - 0px);
+      background-color: $colorWhite;
+      mask-image: url("../../../assets/img/mask.png");
+      pointer-events: none;
+    }
+
+    @include after {
+      box-shadow: 0px 0px 65px 30px rgba(0, 0, 0, 0.16);
+      width: 0;
+      height: 2px;
+      right: 2px;
+      top: -31px;
+      z-index: -2;
+    }
+  }
+
+  &__dropInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+
+    @include responsive1199 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include responsive1023 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__status {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+
+    @include responsive1199 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__links {
+    border-top: solid 1px $colorBlack-a5;
+    padding-top: 20px;
+    margin-top: 10px;
+
+    li {
+      & + li {
+        margin-top: 25px;
+
+        @include responsive1199 {
+          margin-top: 20px;
+        }
+
+        @include responsive1023 {
+          margin-top: 16px;
+        }
+      }
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      line-height: 22px;
+
+      @include responsive1023 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      @include responsive1023 {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+
+    @include responsive1023 {
+      padding-top: 16px;
+      margin-top: 16px;
+    }
+  }
+}

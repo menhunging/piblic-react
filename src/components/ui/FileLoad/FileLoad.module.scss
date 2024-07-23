@@ -1,0 +1,107 @@
+.fileUpload {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px 0;
+
+  &__left {
+    width: 80%;
+    padding-right: 30px;
+  }
+
+  &__right {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    label {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      @include text-decoration-default;
+      max-width: 90%;
+
+      @include responsive1199 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      @include responsive1023 {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    display: block;
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &__size {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    opacity: 0.5;
+    display: block;
+    margin-top: 5px;
+
+    @include responsive1023 {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__upload {
+    background-position: right !important;
+    background-size: 14px !important;
+    padding-right: 21px;
+    @include text-decoration-default;
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &__delete {
+    cursor: pointer;
+    background-position: right;
+    width: 10px;
+    height: 10px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  input {
+    display: none;
+  }
+}
